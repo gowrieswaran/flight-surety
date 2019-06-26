@@ -11,17 +11,28 @@ To install, download or clone the repo, then:
 `npm install`
 `truffle compile`
 
+![compile](https://github.com/gowrieswaran/flight-surety/blob/master/screenshots/truffle-compile.PNG)
 ## Develop Client
 
 To run truffle tests:
 
 `truffle test ./test/flightSurety.js`
+
+![test1](https://github.com/gowrieswaran/flight-surety/blob/master/screenshots/truffle-tests.PNG)
+
 `truffle test ./test/oracles.js`
+
+![test2](https://github.com/gowrieswaran/flight-surety/blob/master/screenshots/truffle-tests-oracles.PNG)
 
 To use the dapp:
 
 `truffle migrate`
+
+![migrate](https://github.com/gowrieswaran/flight-surety/blob/master/screenshots/truffle-migrate.PNG)
+
 `npm run dapp`
+
+![dapp](https://github.com/gowrieswaran/flight-surety/blob/master/screenshots/npm-run-dapp.PNG)
 
 To view dapp:
 
