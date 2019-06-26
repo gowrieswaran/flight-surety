@@ -180,6 +180,6 @@ contract("Flight Surety Tests", async accounts => {
 
     // ASSERT
 
-    assert.equal(reverted, true, "Error in retrieveing balance");
+    assert.equal(reverted, true, "Error in retrieving balance");
   });
 });
