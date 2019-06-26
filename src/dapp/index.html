@@ -1,33 +1,88 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
     <title>FlightSurety</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-</head>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="airplane.png" type="img/png" />
+  </head>
 
-<body>
-
+  <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-        <a class="navbar-brand" href="#">FlightSurety</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault"
-            aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+      <a class="navbar-brand" href="#">FlightSurety</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarsExampleDefault"
+        aria-controls="navbarsExampleDefault"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
     </nav>
+    <main>
+      <section class="container">
+        <div id="display-wrapper" class="top-20"></div>
+        <div class="row top-20">
+          <label class="form">Flight</label>
+          <input type="text" id="flight-number" />
+          <btn class="btn btn-primary" id="submit-oracle"
+            >Submit to Oracles</btn
+          >
+        </div>
+      </section>
 
-    <main class="container">
-
-        <div id="display-wrapper" class="top-20">
+      <section class="container margin-top">
+        <h3>Buy Insurance</h3>
+        <div class="row top-20">
+          <label class="form">Flight - GE0910</label>
+          <input
+            type="text"
+            maxlength="3"
+            id="flightETH0910"
+            placeholder="Upto 1 ETH"
+          />
+          <btn class="btn btn-secondary" id="buy0910">Buy Insurance</btn>
+          <!-- <btn class="btn btn-primary" id="submit-oracle"
+            >Submit to Oracles</btn
+          > -->
         </div>
         <div class="row top-20">
-            <label class="form">Flight</label> <input type="text" id="flight-number"> <btn class="btn btn-primary" id="submit-oracle">Submit to Oracles</btn>
+          <label class="form">Flight - GE1601</label>
+          <input
+            type="text"
+            maxlength="3"
+            id="flightETH1601"
+            placeholder="Upto 1 ETH"
+          />
+          <btn class="btn btn-secondary" id="buy1601">Buy Insurance</btn>
+          <!-- <btn class="btn btn-primary" id="submit-oracle"
+            >Submit to Oracles</btn 
+          >-->
         </div>
+        <div class="row top-20">
+          <label class="form">Flight - GE0608</label>
+          <input
+            type="text"
+            maxlength="3"
+            id="flightETH0608"
+            placeholder="Upto 1 ETH"
+          />
+          <btn class="btn btn-secondary" id="buy0608">Buy Insurance</btn>
+          <!-- <btn class="btn btn-primary" id="submit-oracle"
+            >Submit to Oracles</btn 
+          >-->
+        </div>
+      </section>
     </main>
-
-</body>
-
+  </body>
 </html>

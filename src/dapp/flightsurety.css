@@ -1,42 +1,71 @@
 body {
-    background-image: url('flight.jpg'); /* Source: iStockPhoto */
-    background-repeat: no-repeat;
-    background-size: cover;
+  background-image: url("flight.jpg"); /* Source: iStockPhoto */
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* position: relative;
+  height: 300px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; */
 }
 
 .container {
-    margin-top: 400px;
-    background-color: #000;
-    opacity: 0.9;
-    color: #fff;
-    padding: 40px;
-}
+  margin-top: 200px;
+  background: #fc4a1a; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #f7b733,
+    #fc4a1a
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #f7b733,
+    #fc4a1a
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
+  opacity: 0.6;
+  color: #000;
+  padding: 40px;
+  border: 2px solid rgb(255, 115, 0);
+}
+.margin-top {
+  margin-top: 50px;
+}
 .top-20 {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 h5 {
-    color: #999999;
+  color: #091b86;
 }
 
 section {
-    margin-bottom: 50px;
+  margin-bottom: 50px;
 }
 
+label,
+.btn {
+  font-weight: bold;
+}
 .field {
-    font-weight: bold;
-    text-align: right;
+  font-weight: bold;
+  text-align: right;
 }
 
 .field-value {
-    color: #0e7fa8;
+  color: #fff;
+  font-weight: bold;
 }
 
 label.form {
-    font-size: 14px;
-    margin-right: 20px;
+  font-size: 16px;
+  margin-right: 20px;
 }
 input {
-    margin-right: 30px;
+  margin-right: 30px;
+}
+
+.btn {
+  margin: 5px;
 }
