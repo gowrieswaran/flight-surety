@@ -32,7 +32,41 @@
     <main>
       <section class="container">
         <div id="display-wrapper" class="top-20"></div>
-        <div class="row top-20">
+      </section>
+
+      <section class="container margin-top">
+        <h4>Buy Insurance</h4>
+        <br />
+
+        <label class="form">Airline</label>
+        <input type="text" id="airlines" value="GE Airlines" readonly />
+        <em>(Available Flights listed below)</em><br />
+        <br />
+        <label class="form">Flight</label>
+        <select id="airline-number">
+          <option value="ge0910">GE0910 @ 1561610600</option>
+          <option value="ge1601">GE1601 @ 1549432800</option>
+        </select>
+
+        <input
+          type="text"
+          maxlength="3"
+          id="insurance-value"
+          placeholder="Upto 1 ETH"
+        />
+        <br />
+        <br />
+        <em class="text-primary"
+          ><strong>
+            In case of flight delay, passengers get back 1.5 X the insurance
+            amount paid</strong
+          ></em
+        ><br />
+        <btn class="btn btn-dark" id="buy-insurance">Buy Insurance</btn>
+      </section>
+      <section class="container margin-top">
+        <h4>Fetch Status from Oracles</h4>
+        <div>
           <label class="form">Flight</label>
           <input type="text" id="flight-number" />
           <btn class="btn btn-primary" id="submit-oracle"
@@ -40,48 +74,22 @@
           >
         </div>
       </section>
-
       <section class="container margin-top">
-        <h3>Buy Insurance</h3>
-        <div class="row top-20">
-          <label class="form">Flight - GE0910</label>
-          <input
-            type="text"
-            maxlength="3"
-            id="flightETH0910"
-            placeholder="Upto 1 ETH"
-          />
-          <btn class="btn btn-secondary" id="buy0910">Buy Insurance</btn>
-          <!-- <btn class="btn btn-primary" id="submit-oracle"
-            >Submit to Oracles</btn
-          > -->
-        </div>
-        <div class="row top-20">
-          <label class="form">Flight - GE1601</label>
-          <input
-            type="text"
-            maxlength="3"
-            id="flightETH1601"
-            placeholder="Upto 1 ETH"
-          />
-          <btn class="btn btn-secondary" id="buy1601">Buy Insurance</btn>
-          <!-- <btn class="btn btn-primary" id="submit-oracle"
-            >Submit to Oracles</btn 
-          >-->
-        </div>
-        <div class="row top-20">
-          <label class="form">Flight - GE0608</label>
-          <input
-            type="text"
-            maxlength="3"
-            id="flightETH0608"
-            placeholder="Upto 1 ETH"
-          />
-          <btn class="btn btn-secondary" id="buy0608">Buy Insurance</btn>
-          <!-- <btn class="btn btn-primary" id="submit-oracle"
-            >Submit to Oracles</btn 
-          >-->
-        </div>
+        <h4>Claim Insurance & Payouts</h4>
+        <label>Purchased Insurance for Flight</label>
+        <input type="text" id="selected-flight" readonly />
+
+        <br />
+        <label>Amount Insured for</label>
+        <input type="text" id="insurance-for-flight" /><br />
+
+        <btn class="btn btn-dark" id="show-credits"
+          >Display Available Credits</btn
+        ><br />
+        <input type="text" id="amountToWithdraw" />
+        <btn class="btn btn-primary" id="withdraw-credits"
+          >Withdraw Credits</btn
+        >
       </section>
     </main>
   </body>

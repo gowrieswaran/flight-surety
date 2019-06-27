@@ -16,7 +16,7 @@ import "./flightsurety.css";
 
     // User-submitted transaction
     DOM.elid("submit-oracle").addEventListener("click", () => {
-      let flight = DOM.elid("flight-number").value;
+      let flight = DOM.elid("airline-number").value;
       // Write transaction
       contract.fetchFlightStatus(flight, (error, result) => {
         display("Oracles", "Trigger oracles", [
@@ -29,49 +29,42 @@ import "./flightsurety.css";
       });
     });
 
-    // // register airline
-    // DOM.elid("submit-airline").addEventListener("click", () => {
-    //   let airlineCode = DOM.elid("airline-number").value;
-    //   // Write transaction
-    //   contract.registerAirline(airlineCode, (error, result) => {
-    //     console.log(result);
-    //     display("Airline", "Register Airline", [
-    //       {
-    //         label: "Register Airline Status ",
-    //         error: error,
-    //         value: result.airlineCode + " " + result.airline
-    //       }
-    //     ]);
-    //   });
-    // });
+    DOM.elid("buy-insurance").addEventListener("click", () => {
+      let flightChoosen = DOM.elid("airline-number").value;
+      let insuredAmt = DOM.elid("insurance-value").value;
+      DOM.elid("insurance-for-flight").value = insuredAmt;
+      DOM.elid("selected-flight").value = flightChoosen;
+      contract.purchaseFlightInsurance(
+        flightChoosen,
+        insuredAmt,
+        (error, result) => {
+          display("Flight", "Purchase Flight Insurace", [
+            {
+              label: "Purchase Flight Insurance Status ",
+              error: error,
+              value: true
+            }
+          ]);
+        }
+      );
+    });
 
-    // buy airline insurance
-    DOM.elid("buy0910").addEventListener("click", () => {
-      let amt = DOM.elid("flightETH0910").value;
-      let flight = "GE0910";
-      contract.purchaseFlightInsurance(flight, amt, (error, result) => {
-        display("Insurance Purchased for", "Flight " + flight, [
-          { label: "TXN - ", error: error, value: result }
+    DOM.elid("show-credits").addEventListener("click", () => {
+      // Write transaction
+      contract.getCredits((error, result) => {
+        display("Available Credits", "Available Credits", [
+          { label: "Available Credits ", error: error, value: result }
         ]);
       });
     });
 
-    DOM.elid("buy1601").addEventListener("click", () => {
-      let amt = DOM.elid("flightETH1601").value;
-      let flight = "GE1601";
-      contract.purchaseFlightInsurance(flight, amt, (error, result) => {
-        display("Insurance Purchased for", "Flight " + flight, [
-          { label: "TXN - ", error: error, value: result }
-        ]);
-      });
-    });
+    DOM.elid("withdraw-credits").addEventListener("click", () => {
+      // Write transaction
 
-    DOM.elid("buy0608").addEventListener("click", () => {
-      let amt = DOM.elid("flightETH0608").value;
-      let flight = "GE0608";
-      contract.purchaseFlightInsurance(flight, amt, (error, result) => {
-        display("Insurance Purchased for", "Flight " + flight, [
-          { label: "TXN - ", error: error, value: result }
+      let amount = DOM.elid("amountToWithdraw").value;
+      contract.withdrawCredits(amount, (error, result) => {
+        display("Flight", "Widthdraw Credits", [
+          { label: "Withdraw Credit ", error: error, value: true }
         ]);
       });
     });

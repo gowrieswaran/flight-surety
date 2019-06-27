@@ -110,7 +110,7 @@ export default class Contract {
     let self = this;
     let airlineAddress;
     let amount = web3.toWei(amt.toString(), "ether");
-    if (flight == "GE0910") {
+    if (flight == "ge0910") {
       airlineAddress = self.airlines[0];
     } else {
       airlineAddress = self.airlines[1];
@@ -140,6 +140,35 @@ export default class Contract {
         }
       );
   }
+  getCredits(callback) {
+    let self = this;
+    let payload = {
+      insuree: self.passengers[0]
+    };
+
+    self.flightSuretyApp.methods
+      .getCredits(payload.insuree)
+      .call({ from: self.owner }, callback);
+  }
+
+  withdrawCredits(amount, callback) {
+    let self = this;
+    amount = web3.toWei(amount.toString(), "ether");
+    let payload = {
+      insuree: self.passengers[0]
+    };
+    self.flightSuretyApp.methods.pay(payload.insuree).send(
+      {
+        from: self.owner,
+        value: amount,
+        gas: 4712388,
+        gasPrice: 100000000000
+      },
+      (error, result) => {
+        callback(error, payload);
+      }
+    );
+  }
 
   fetchFlightStatus(flight, callback) {
     let self = this;
@@ -154,4 +183,32 @@ export default class Contract {
         callback(error, payload);
       });
   }
+
+  checkInsuredAmount(flight, callback) {
+    let self = this;
+    let airlineAddress;
+    let amount = 1;
+    amount = web3.toWei(amount.toString(), "ether");
+    if (flight == "ge0910") {
+      airlineAddress = self.airlines[0];
+    } else {
+      airlineAddress = self.airlines[1];
+    }
+    let payload = {
+      insuree: self.passengers[0],
+      airline: airlineAddress,
+      flight: flight,
+      timestamp: 1549432800
+    };
+
+    self.flightSuretyApp.methods
+      .getPassengerInsuredAmount(
+        payload.insuree,
+        payload.airline,
+        payload.flight,
+        payload.timestamp
+      )
+      .call({ from: self.owner }, callback);
+  }
+  s;
 }

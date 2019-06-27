@@ -409,7 +409,7 @@ contract FlightSuretyApp {
 
 // endregion
 
-}   
+}    
 
 contract FlightSuretyData {
     function isOperational() external view returns(bool);
